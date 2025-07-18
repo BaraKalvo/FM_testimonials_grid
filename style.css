@@ -167,6 +167,10 @@ footer {
             "card5 card5";
         align-items: stretch;
     }
+
+    .card--purple {
+        background: var(--color-primary-dark) url(images/bg-pattern-quotation.svg) no-repeat right 14rem top;
+    }
 }
 
 @media screen and (min-width: 90rem) {
@@ -178,5 +182,9 @@ footer {
         grid-template-areas: 
             "card1 card1 card2 card5"
             "card3 card4 card4 card5";
+    }
+
+    .card--purple {
+        background-position: right 4rem top;
     }
 }
