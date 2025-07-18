@@ -1,0 +1,182 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary-light: hsl(260, 100%, 95%);
+    --color-primary-medium: hsl(264, 82%, 80%);
+    --color-primary-dark: hsl(263, 55%, 52%);
+    --color-black: hsl(0, 0%, 7%);
+    --color-dark-blue: hsl(219, 29%, 14%);
+    --color-white: hsl(0, 0%, 100%);
+    --color-grey-lightest: hsl(214, 17%, 92%);
+    --color-grey-lighter: hsl(0, 0%, 81%);
+    --color-grey-darker: hsl(224, 10%, 45%);
+    --color-grey-darkest: hsl(217, 19%, 35%);
+    --font-size-large: 1.25rem;
+    --font-size-medium: 0.81rem;
+    --font-size-small: 0.69rem;
+}
+
+body {
+    margin: 0;
+    background-color: #f6f5f6;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-weight: 500;
+}
+
+.grid {
+    max-width: 30rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3.75rem 1.5rem;
+    align-items: center;
+    font-size: var(--font-size-medium);
+}
+
+.card {
+    padding: 2rem;
+    width: 100%;
+    background-color: var(--color-card-background, var(--color-grey-lightest));
+    border-radius: 8px;
+    box-shadow: 40px 60px 50px rgba(72,85,106,0.2474);
+}
+
+.author-wrapper {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.author-avatar-wrapper {
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+.author-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.author-avatar--bordered {
+    box-shadow: 0 0 0 2px var(--color-primary-medium);
+}
+
+.author-name {
+    line-height: 1.1;
+    margin-block: 0 0.25rem;
+    color: var(--color-author-name, var(--color-black));
+}
+
+.author-role {
+    font-size: var(--font-size-small);
+    line-height: 1.1;
+    margin-block: 0;
+    color: var(--color-author-role, var(--color-black));
+}
+
+.card-title {
+    margin-block: 1rem;
+    font-size: var(--font-size-large);
+    line-height: 1.2;
+    color: var(--color-card-title, var(--color-black));
+}
+
+.card-text {
+    margin-block: 0;
+    line-height: 1.4;
+    color: var(--color-card-text, var(--color-black));
+}
+
+.card--purple {
+    --color-card-background: var(--color-primary-dark);
+    --color-author-name: var(--color-white);
+    --color-author-role: var(--color-primary-light);
+    --color-card-title: var(--color-white);
+    --color-card-text: var(--color-primary-light);
+}
+
+.card--grey-dark {
+    --color-card-background: var(--color-grey-darkest);
+    --color-author-name: var(--color-white);
+    --color-author-role: var(--color-grey-lightest);
+    --color-card-title: var(--color-white);
+    --color-card-text: var(--color-grey-lightest);
+}
+
+.card--white {
+    --color-card-background: var(--color-white);
+    --color-author-name: var(--color-grey-darkest);
+    --color-author-role: var(--color-grey-darker);
+    --color-card-title: var(--color-grey-darkest);
+    --color-card-text: var(--color-grey-darker);
+}
+
+.card--dark-blue {
+    --color-card-background: var(--color-dark-blue);
+    --color-author-name: var(--color-white);
+    --color-author-role: var(--color-white);
+    --color-card-title: var(--color-grey-lighter);
+    --color-card-text: var(--color-grey-lightest);
+}
+
+.card1-grid {
+    grid-area: card1;
+}
+
+.card2-grid {
+    grid-area: card2;
+}
+
+.card3-grid {
+    grid-area: card3;
+}
+
+.card4-grid {
+    grid-area: card4;
+}
+
+.card5-grid {
+    grid-area: card5;
+}
+
+footer {
+    padding: 1.5rem;
+    text-align: center;
+    font-size: var(--font-size-small);
+    color: var(--color-grey-darkest);
+}
+
+@media screen and (min-width: 48rem) {
+
+    .grid {
+        max-width: 52rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas: 
+            "card1 card1"
+            "card2 card3"
+            "card4 card4"
+            "card5 card5";
+        align-items: stretch;
+    }
+}
+
+@media screen and (min-width: 90rem) {
+
+    .grid {
+        max-width: 70rem;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+            "card1 card1 card2 card5"
+            "card3 card4 card4 card5";
+    }
+}
