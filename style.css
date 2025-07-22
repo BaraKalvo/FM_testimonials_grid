@@ -187,6 +187,7 @@ footer {
 
     .card--purple {
         background: var(--color-primary-dark) url(images/bg-pattern-quotation.svg) no-repeat right 14rem top;
+        background-size: 15%;
     }
 }
 
@@ -203,5 +204,6 @@ footer {
 
     .card--purple {
         background-position: right 4rem top;
+        background-size: 20%;
     }
 }
